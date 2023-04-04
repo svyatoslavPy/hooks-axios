@@ -1,9 +1,10 @@
 //mycomponent
 import React, { useState } from 'react'
-import { useFetchCharacter } from './hooks/use-fetch-data'
-import { useFetchEpisode } from './hooks/use-fetchEpisode'
-import { Loader } from './components/preloader'
+import { useFetchCharacter } from '../hooks/use-fetch-data'
+import { useFetchEpisode } from '../hooks/use-fetchEpisode'
+import { Loader } from './preloader'
 import { Card } from './Card'
+
 export const CardsRickyMorty = () => {
 	// hooks
 	const [pageEpisode, setPageEpisode] = useState(`episode/?page=1`)
@@ -29,7 +30,6 @@ export const CardsRickyMorty = () => {
 		setPageCharacter(dataCharacter.info.next)
 	}
 
-	
 	// Episode
 	// *************
 

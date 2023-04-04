@@ -9,7 +9,7 @@ export const useFetchCharacter = url => {
 	useEffect(() => {
 		setTimeout(() => {
 			setLoading(false)
-		}, 2000);
+		}, 2000)
 		axios
 			.get(url)
 			.then(res => {
@@ -24,4 +24,3 @@ export const useFetchCharacter = url => {
 
 	return { dataCharacter, loadingCharacter }
 }
-
