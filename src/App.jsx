@@ -1,16 +1,27 @@
-import { CardsRickyMorty } from './components/cardRickyMorty'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { HomeGreeting } from './pages/HomeGreeting'
+import { HomeCardCharacter } from './pages/HomeCardСharacter'
+import { HomeCardEpisode } from './pages/HomeCardEpisode'
+import { InfoEpisode } from './pages/HomeCardEpisode'
+import { InfoCharacter } from './pages/HomeCardСharacter'
 
 const App = () => {
-	return <CardsRickyMorty></CardsRickyMorty>
+	
+	return (
+		<BrowserRouter>
+			<Routes>
+				<Route path='/' element={<HomeGreeting />} />
+				<Route path='/character' element={<HomeCardCharacter />}>
+					<Route path='info/:id' element={<InfoCharacter />} /> 
+				</Route>
+				<Route path='/episode' element={<HomeCardEpisode />}>
+					<Route path='info/:id' element={<InfoEpisode />} /> 
+				</Route>
+			</Routes>
+		</BrowserRouter>
+	)
 }
 
-export default App
 
-//  Напишите приложение на реакт сотоящее из следующих частей
-//  два списка, первый список героев, вторй список эпизодов. Кждый список имеет кнопки пагинации всеред и назад (если мы достигли предела, кнопка блочится). Оба списка - это один компонент примененный просто в разных местах. Карточки для него - отдельный компоненты.
-// Списки мы получаем с Рик и Морти API. Для запросов используем хук по образцу из лнкции. Пока идет загрузк вместо списка пишем Loading..., ошибку можем не обрабатывать.
-// Хука должно быть два, для эпизодов и для персонажей.
-// Внутри хука для запроса используем axios
-// Axios должен быть сконфигурирован так, чтобы базоый адрес был для всех запросов один и не писался каждый раз при запросе. П.С. смотри лекцию в архиве;)
-// К каждому запросу в заголовок при помомщи интерсептора добавте поле My-custom-field: foobar
-// Дизайн придумайте по вкусу, я бы поделеил экранное пространство пополам и там вывел оба списка.
+
+export default App

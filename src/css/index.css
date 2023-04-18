@@ -21,6 +21,10 @@ body {
 	margin: 10px 0px 0px 0px;
 }
 
+.card:hover {
+	cursor: pointer;
+}
+
 .card p {
 	margin: 25px 0px 0px 0px;
 	line-height: 20px;
@@ -83,4 +87,32 @@ button:hover {
 	to {
 		transform: rotate(360deg);
 	}
+}
+
+.greeting {
+	margin: 50px 0px 0px 40px;
+}
+
+.greeting h1 {
+	font-size: 30px;
+}
+
+.info {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 10px;
+}
+
+.info img {
+	width: 150px;
+}
+
+.greeting nav > ul {
+	display: flex;
+	column-gap: 20px;
+}
+
+.greeting nav > ul > li {
+  display: inline-block;
 }
